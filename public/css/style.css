@@ -216,17 +216,6 @@ ul { margin: 0; padding: 0; list-style: none; }
   gap: 48px;
   align-items: center;
 }
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--gold-300);
-  font-weight: 700;
-  font-size: 0.78rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  margin: 0 0 18px;
-}
 .hero__title {
   font-size: clamp(2.2rem, 4vw, 3.4rem);
   font-weight: 700;
@@ -346,13 +335,12 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .reason-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-pop); }
 .reason-card--highlight {
-  background: linear-gradient(160deg, var(--maroon-700), var(--maroon-800));
-  color: var(--white);
-  border-color: transparent;
+  background: linear-gradient(160deg, var(--gold-100), var(--gold-300) 160%);
+  border-color: var(--gold-400);
 }
-.reason-card--highlight h3 { color: var(--gold-300); }
-.reason-card--highlight p { color: rgba(255,255,255,0.82); }
-.reason-card--highlight .reason-card__icon { background: rgba(232,201,122,0.18); color: var(--gold-300); }
+.reason-card--highlight h3 { color: var(--maroon-800); }
+.reason-card--highlight p { color: var(--ink-700); }
+.reason-card--highlight .reason-card__icon { background: var(--maroon-700); color: var(--gold-300); }
 
 .reason-card__icon {
   display: inline-flex;
@@ -490,24 +478,38 @@ input[type="range"]::-moz-range-track { height: 6px; border-radius: 999px; backg
 
 /* ------------------------------ Register ------------------------------ */
 .register { padding: 80px 0; }
-.register__inner {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 56px;
-}
-.register__desc { color: var(--ink-500); max-width: 46ch; margin-bottom: 30px; }
 
-.register__contact { display: flex; flex-direction: column; gap: 18px; }
-.register__contact dt { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--gold-500); margin-bottom: 2px; }
-.register__contact dd { margin: 0; font-weight: 700; color: var(--maroon-800); font-size: 1.05rem; }
-.register__contact a:hover { text-decoration: underline; }
+.register-card {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-pop);
+}
+
+.register__intro {
+  background: linear-gradient(165deg, var(--maroon-700) 0%, var(--maroon-900) 100%);
+  color: var(--white);
+  padding: 44px 40px;
+  display: flex;
+  flex-direction: column;
+}
+.register__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.4vw, 1.85rem);
+  color: var(--white);
+  margin-bottom: 16px;
+}
+.register__desc { color: rgba(255,255,255,0.78); margin-bottom: 32px; }
+
+.register__contact { display: flex; flex-direction: column; gap: 18px; margin-top: auto; padding-top: 24px; border-top: 1px dashed rgba(255,255,255,0.2); }
+.register__contact dt { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--gold-300); margin-bottom: 2px; }
+.register__contact dd { margin: 0; font-weight: 700; color: var(--white); font-size: 1.05rem; }
+.register__contact a:hover { color: var(--gold-300); }
 
 .register-form {
-  background: var(--white);
-  border: 1px solid var(--maroon-100);
-  border-radius: var(--radius-lg);
-  padding: 32px;
-  box-shadow: var(--shadow-card);
+  padding: 44px 40px;
 }
 .field { margin-bottom: 20px; }
 .field label { display: block; font-weight: 700; font-size: 0.9rem; color: var(--maroon-800); margin-bottom: 8px; }
@@ -523,7 +525,7 @@ input[type="range"]::-moz-range-track { height: 6px; border-radius: 999px; backg
   color: var(--ink-900);
   transition: border-color 160ms ease, box-shadow 160ms ease;
 }
-.field textarea { resize: vertical; min-height: 90px; }
+.field textarea { resize: vertical; min-height: 70px; }
 .field input:focus, .field textarea:focus {
   border-color: var(--maroon-600);
   box-shadow: 0 0 0 3px rgba(122, 20, 32, 0.14);
@@ -550,7 +552,7 @@ input[type="range"]::-moz-range-track { height: 6px; border-radius: 999px; backg
 .form-status--error { background: #FBEAE9; color: var(--danger-600); }
 
 @media (max-width: 900px) {
-  .register__inner { grid-template-columns: 1fr; }
+  .register-card { grid-template-columns: 1fr; }
 }
 
 /* ------------------------------ Footer ------------------------------ */

@@ -1,6 +1,7 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
+const nodemailer = require('nodemailer');
 
 const router = express.Router();
 const DATA_FILE = path.join(__dirname, '..', 'data', 'registrations.json');
@@ -21,7 +22,48 @@ function writeRegistrations(list) {
   fs.writeFileSync(DATA_FILE, JSON.stringify(list, null, 2), 'utf8');
 }
 
-router.post('/dang-ky', (req, res) => {
+let transporter = null;
+function getTransporter() {
+  if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) return null;
+  if (!transporter) {
+    transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
+    });
+  }
+  return transporter;
+}
+
+async function sendRegistrationEmail(entry) {
+  const mailer = getTransporter();
+  if (!mailer) {
+    console.warn('[Email] Chưa cấu hình EMAIL_USER/EMAIL_PASS — bỏ qua gửi email thông báo.');
+    return;
+  }
+
+  const to = process.env.EMAIL_TO || 'hoanglam1209@gmail.com';
+  const thoiGianVN = new Date(entry.thoiGian).toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' });
+
+  await mailer.sendMail({
+    from: `"Agribank Thấu Chi - Website" <${process.env.EMAIL_USER}>`,
+    to,
+    subject: `Đăng ký tư vấn thấu chi mới — ${entry.hoTen}`,
+    text: [
+      'Có khách hàng vừa đăng ký tư vấn thấu chi trên website:',
+      '',
+      `Họ tên: ${entry.hoTen}`,
+      `Số điện thoại: ${entry.soDienThoai}`,
+      `Phòng giao dịch mong muốn: ${entry.diaDiem || '(không ghi)'}`,
+      `Nội dung cần tư vấn: ${entry.ghiChu || '(không có)'}`,
+      `Thời gian đăng ký: ${thoiGianVN}`,
+    ].join('\n'),
+  });
+}
+
+router.post('/dang-ky', async (req, res) => {
   const hoTen = (req.body.hoTen || '').trim();
   const soDienThoai = (req.body.soDienThoai || '').trim();
   const diaDiem = (req.body.diaDiem || '').trim();
@@ -55,8 +97,14 @@ router.post('/dang-ky', (req, res) => {
     writeRegistrations(list);
   } catch (err) {
     // Trên môi trường serverless (VD: Vercel) filesystem chỉ đọc — bỏ qua ghi
-    // file, dữ liệu vẫn có trong log ở trên để tra cứu qua dashboard.
+    // file, dữ liệu vẫn có trong log/email để tra cứu.
     console.error('[Không thể ghi registrations.json]', err.message);
+  }
+
+  try {
+    await sendRegistrationEmail(entry);
+  } catch (err) {
+    console.error('[Không thể gửi email thông báo]', err.message);
   }
 
   return res.json({ ok: true });

@@ -13,7 +13,6 @@
   <section class="hero">
     <div class="wrap hero__inner">
       <div class="hero__copy">
-        <p class="eyebrow">Sản phẩm mới &middot; Agribank Chi nhánh Hà Tĩnh II</p>
         <h1 class="hero__title">
           Cần tiền gấp<br>trước kỳ lương?<br>
           <span class="hero__title-accent">Đã có Agribank lo!</span>
@@ -219,56 +218,58 @@
 
   <!-- ĐĂNG KÝ -->
   <section class="register" id="dang-ky">
-    <div class="wrap register__inner">
-      <div class="register__intro">
-        <p class="section-eyebrow">Đăng ký ngay hôm nay</p>
-        <h2 class="section-title">Đừng để những khoản chi bất ngờ<br>làm gián đoạn kế hoạch của Quý khách</h2>
-        <p class="register__desc">
-          Để lại thông tin, cán bộ Agribank Chi nhánh Hà Tĩnh II sẽ liên hệ tư vấn
-          hạn mức thấu chi phù hợp với Quý khách trong thời gian sớm nhất.
-        </p>
+    <div class="wrap">
+      <div class="register-card">
+        <div class="register__intro">
+          <p class="section-eyebrow section-eyebrow--light">Đăng ký ngay hôm nay</p>
+          <h2 class="register__title">Đừng để những khoản chi bất ngờ làm gián đoạn kế hoạch của Quý khách</h2>
+          <p class="register__desc">
+            Để lại thông tin, cán bộ Agribank Chi nhánh Hà Tĩnh II sẽ liên hệ tư vấn
+            hạn mức thấu chi phù hợp với Quý khách trong thời gian sớm nhất.
+          </p>
 
-        <dl class="register__contact">
-          <div>
-            <dt>Điểm giao dịch</dt>
-            <dd>Các Phòng giao dịch của Agribank Chi nhánh Hà Tĩnh II</dd>
+          <dl class="register__contact">
+            <div>
+              <dt>Điểm giao dịch</dt>
+              <dd>Các Phòng giao dịch của Agribank Chi nhánh Hà Tĩnh II</dd>
+            </div>
+            <div>
+              <dt>Hotline</dt>
+              <dd><a href="tel:0966400364">0966.400.364</a></dd>
+            </div>
+          </dl>
+        </div>
+
+        <form class="register-form" id="dangKyForm" novalidate>
+          <div class="field">
+            <label for="hoTen">Họ và tên <span aria-hidden="true">*</span></label>
+            <input type="text" id="hoTen" name="hoTen" autocomplete="name" required aria-describedby="hoTen-error" aria-invalid="false">
+            <p class="field-error" id="hoTen-error" role="alert" hidden></p>
           </div>
-          <div>
-            <dt>Hotline</dt>
-            <dd><a href="tel:0966400364">0966.400.364</a></dd>
+
+          <div class="field">
+            <label for="soDienThoai">Số điện thoại <span aria-hidden="true">*</span></label>
+            <input type="tel" id="soDienThoai" name="soDienThoai" autocomplete="tel" inputmode="numeric" placeholder="09xxxxxxxx" required aria-describedby="soDienThoai-error" aria-invalid="false">
+            <p class="field-error" id="soDienThoai-error" role="alert" hidden></p>
           </div>
-        </dl>
+
+          <div class="field">
+            <label for="diaDiem">Phòng giao dịch mong muốn <span class="field-optional">(không bắt buộc)</span></label>
+            <input type="text" id="diaDiem" name="diaDiem" placeholder="VD: PGD gần nơi ở/làm việc">
+          </div>
+
+          <div class="field">
+            <label for="ghiChu">Nội dung cần tư vấn <span class="field-optional">(không bắt buộc)</span></label>
+            <textarea id="ghiChu" name="ghiChu" rows="2" placeholder="Hạn mức mong muốn, thời gian liên hệ thuận tiện..."></textarea>
+          </div>
+
+          <div class="form-status" id="formStatus" role="status" aria-live="polite" hidden></div>
+
+          <button class="btn btn--accent btn--lg btn--block" type="submit">
+            <span id="submitLabel">Gửi đăng ký</span>
+          </button>
+        </form>
       </div>
-
-      <form class="register-form" id="dangKyForm" novalidate>
-        <div class="field">
-          <label for="hoTen">Họ và tên <span aria-hidden="true">*</span></label>
-          <input type="text" id="hoTen" name="hoTen" autocomplete="name" required aria-describedby="hoTen-error" aria-invalid="false">
-          <p class="field-error" id="hoTen-error" role="alert" hidden></p>
-        </div>
-
-        <div class="field">
-          <label for="soDienThoai">Số điện thoại <span aria-hidden="true">*</span></label>
-          <input type="tel" id="soDienThoai" name="soDienThoai" autocomplete="tel" inputmode="numeric" placeholder="09xxxxxxxx" required aria-describedby="soDienThoai-error" aria-invalid="false">
-          <p class="field-error" id="soDienThoai-error" role="alert" hidden></p>
-        </div>
-
-        <div class="field">
-          <label for="diaDiem">Phòng giao dịch mong muốn <span class="field-optional">(không bắt buộc)</span></label>
-          <input type="text" id="diaDiem" name="diaDiem" placeholder="VD: PGD gần nơi ở/làm việc của Quý khách">
-        </div>
-
-        <div class="field">
-          <label for="ghiChu">Nội dung cần tư vấn <span class="field-optional">(không bắt buộc)</span></label>
-          <textarea id="ghiChu" name="ghiChu" rows="3" placeholder="Hạn mức mong muốn, thời gian liên hệ thuận tiện..."></textarea>
-        </div>
-
-        <div class="form-status" id="formStatus" role="status" aria-live="polite" hidden></div>
-
-        <button class="btn btn--primary btn--lg btn--block" type="submit">
-          <span id="submitLabel">Gửi đăng ký</span>
-        </button>
-      </form>
     </div>
   </section>
 
