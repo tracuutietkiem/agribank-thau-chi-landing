@@ -37,6 +37,21 @@ agribank-thau-chi/
 └── data/                   # registrations.json (gitignored)
 ```
 
+## Deploy lên Vercel
+
+Repo đã có sẵn `vercel.json` (deploy Express như một serverless function,
+kèm `views/` và `public/` để EJS render và phục vụ file tĩnh đúng).
+
+1. Vào https://vercel.com/new, chọn **Import Git Repository** và trỏ tới repo GitHub này.
+2. Framework Preset để **Other** — không cần Build Command (không có bước build).
+3. Nhấn **Deploy**.
+
+Lưu ý: trên Vercel, filesystem chỉ đọc nên form đăng ký **không ghi được**
+`data/registrations.json` — dữ liệu đăng ký vẫn được `console.log`, xem tại
+tab **Logs** của deployment trên Vercel dashboard. Muốn lưu bền vững, cần nối
+một database (Vercel Postgres, Supabase...) hoặc gửi email/webhook khi có
+đăng ký mới.
+
 ## Ghi chú
 
 - Lãi suất 7,5%/năm và hạn mức tối đa 12 tháng là số liệu minh hoạ truyền vào

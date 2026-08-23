@@ -47,11 +47,17 @@ router.post('/dang-ky', (req, res) => {
     thoiGian: new Date().toISOString(),
   };
 
-  const list = readRegistrations();
-  list.push(entry);
-  writeRegistrations(list);
-
   console.log('[Đăng ký thấu chi mới]', entry);
+
+  try {
+    const list = readRegistrations();
+    list.push(entry);
+    writeRegistrations(list);
+  } catch (err) {
+    // Trên môi trường serverless (VD: Vercel) filesystem chỉ đọc — bỏ qua ghi
+    // file, dữ liệu vẫn có trong log ở trên để tra cứu qua dashboard.
+    console.error('[Không thể ghi registrations.json]', err.message);
+  }
 
   return res.json({ ok: true });
 });

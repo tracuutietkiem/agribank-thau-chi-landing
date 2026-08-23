@@ -31,6 +31,10 @@ app.use((req, res) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`Agribank Thấu Chi landing page đang chạy tại http://localhost:${PORT}`);
-});
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`Agribank Thấu Chi landing page đang chạy tại http://localhost:${PORT}`);
+  });
+}
+
+module.exports = app;
