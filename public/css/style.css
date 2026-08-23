@@ -255,10 +255,10 @@ ul { margin: 0; padding: 0; list-style: none; }
 .hero__visual { position: relative; }
 .payday-graphic { width: 100%; height: auto; overflow: visible; }
 .payday-gap-fill { fill: rgba(232, 201, 122, 0.16); }
-.payday-label { font-family: var(--font-body); font-size: 13px; font-weight: 700; fill: rgba(255,255,255,0.85); }
+.payday-label { font-family: var(--font-body); font-size: 18px; font-weight: 700; fill: rgba(255,255,255,0.9); }
 .payday-label--accent { fill: var(--gold-300); }
-.payday-sublabel { font-family: var(--font-body); font-size: 11px; fill: rgba(255,255,255,0.55); }
-.payday-caption { font-family: var(--font-body); font-size: 12px; font-weight: 600; fill: var(--gold-300); }
+.payday-sublabel { font-family: var(--font-body); font-size: 15px; fill: rgba(255,255,255,0.6); }
+.payday-caption { font-family: var(--font-body); font-size: 16px; font-weight: 600; fill: var(--gold-300); }
 .payday-pulse circle:first-child { animation: pulse-ring 2.4s ease-out infinite; transform-origin: 410px 150px; }
 @keyframes pulse-ring {
   0% { r: 7; opacity: 0.9; }
@@ -267,7 +267,11 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 @media (max-width: 900px) {
   .hero__inner { grid-template-columns: 1fr; }
-  .hero__visual { order: -1; max-width: 480px; margin: 0 auto; }
+  .hero__visual { order: -1; max-width: 560px; margin: 0 auto; }
+}
+
+@media (max-width: 560px) {
+  .hero__visual { max-width: none; margin: 0 -24px; }
 }
 
 /* ------------------------------ Empathy ------------------------------ */
