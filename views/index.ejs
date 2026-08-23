@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<%- include('partials/head') %>
+</head>
+<body>
+<a class="skip-link" href="#main">Chuyển tới nội dung chính</a>
+<%- include('partials/header') %>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero__inner">
+      <div class="hero__copy">
+        <p class="eyebrow">Sản phẩm mới &middot; Agribank Chi nhánh Hà Tĩnh II</p>
+        <h1 class="hero__title">
+          Cần tiền gấp<br>trước kỳ lương?<br>
+          <span class="hero__title-accent">Đã có Agribank lo!</span>
+        </h1>
+        <p class="hero__desc">
+          Cho vay thấu chi trên tài khoản thanh toán — dành riêng cho khách hàng
+          nhận lương qua Agribank. Chủ động chi tiêu ngay cả khi tài khoản chưa
+          kịp về lương.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--accent btn--lg" href="#dang-ky">Đăng ký ngay hôm nay</a>
+          <a class="btn btn--outline-light btn--lg" href="tel:0966400364">Gọi hotline 0966.400.364</a>
+        </div>
+        <p class="hero__rate">
+          Lãi suất chỉ từ <strong><%= laiSuatNamPhanTram %>%/năm</strong> &middot;
+          Hạn mức tối đa <strong><%= hanMucThoiHanThang %> tháng</strong> &middot;
+          Dùng bao nhiêu, trả lãi bấy nhiêu
+        </p>
+      </div>
+
+      <div class="hero__visual" aria-hidden="false">
+        <svg class="payday-graphic" viewBox="0 0 640 260" role="img" aria-labelledby="paydayTitle paydayDesc">
+          <title id="paydayTitle">Thấu chi Agribank lấp đầy khoảng trống trước ngày lương</title>
+          <desc id="paydayDesc">Đường thời gian từ ngày lương trước đến ngày lương tiếp theo, khoảng trống trước ngày lương được Agribank thấu chi lấp đầy.</desc>
+
+          <line x1="40" y1="150" x2="600" y2="150" stroke="var(--gold-300)" stroke-width="2" stroke-dasharray="1 10" stroke-linecap="round"/>
+
+          <rect x="410" y="128" width="170" height="44" rx="22" class="payday-gap-fill"/>
+          <rect x="410" y="128" width="170" height="44" rx="22" fill="none" stroke="var(--gold-500)" stroke-width="1.5" stroke-dasharray="4 5"/>
+
+          <circle cx="70" cy="150" r="7" fill="var(--maroon-100)" stroke="var(--gold-300)" stroke-width="2"/>
+          <text x="70" y="112" class="payday-label" text-anchor="middle">Lương về</text>
+          <text x="70" y="190" class="payday-sublabel" text-anchor="middle">01/09</text>
+
+          <g class="payday-pulse">
+            <circle cx="410" cy="150" r="12" fill="none" stroke="var(--gold-400)" stroke-width="1.5"/>
+            <circle cx="410" cy="150" r="7" fill="var(--gold-400)"/>
+          </g>
+          <text x="410" y="112" class="payday-label" text-anchor="middle">Hôm nay</text>
+          <text x="410" y="190" class="payday-sublabel" text-anchor="middle">tài khoản hụt</text>
+
+          <circle cx="580" cy="150" r="9" fill="var(--gold-500)" stroke="var(--maroon-900)" stroke-width="2"/>
+          <text x="580" y="112" class="payday-label payday-label--accent" text-anchor="middle">Ngày lương</text>
+          <text x="580" y="190" class="payday-sublabel" text-anchor="middle">tiếp theo</text>
+
+          <text x="495" y="222" class="payday-caption" text-anchor="middle">Agribank thấu chi — lấp đầy khoảng trống</text>
+          <path d="M420 210 Q 495 195 570 210" fill="none" stroke="var(--gold-500)" stroke-width="1.5" stroke-dasharray="3 5" marker-end="url(#arrowHead)"/>
+
+          <defs>
+            <marker id="arrowHead" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+              <path d="M0,0 L8,4 L0,8 Z" fill="var(--gold-500)"/>
+            </marker>
+          </defs>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMPATHY / PROBLEM -->
+  <section class="empathy">
+    <div class="wrap">
+      <p class="empathy__lead">
+        Học phí cho con, viện phí đột xuất, sửa nhà, một chuyến du lịch bất chợt,
+        hay đơn giản là khoản chi tiêu phát sinh trước ngày lương về — cuộc sống
+        luôn có những lúc tài khoản <em>&ldquo;hụt&rdquo;</em> đúng lúc cần nhất.
+      </p>
+      <ul class="chip-row" aria-label="Các nhu cầu chi tiêu phát sinh">
+        <li class="chip">Học phí cho con</li>
+        <li class="chip">Viện phí đột xuất</li>
+        <li class="chip">Sửa chữa nhà cửa</li>
+        <li class="chip">Chuyến đi bất chợt</li>
+        <li class="chip">Chi tiêu trước lương</li>
+      </ul>
+      <p class="empathy__solution">
+        Agribank Chi nhánh Hà Tĩnh II thấu hiểu điều đó, và trân trọng giới thiệu
+        đến Quý khách sản phẩm <strong>Cho vay thấu chi trên tài khoản thanh toán</strong>
+        dành cho khách hàng nhận lương qua Agribank — giải pháp tài chính nhanh
+        chóng, linh hoạt và an toàn, giúp Quý khách chủ động nguồn vốn, đáp ứng
+        kịp thời mọi nhu cầu chi tiêu.
+      </p>
+    </div>
+  </section>
+
+  <!-- LÝ DO CHỌN -->
+  <section class="reasons" id="ly-do">
+    <div class="wrap">
+      <p class="section-eyebrow">Ưu điểm sản phẩm</p>
+      <h2 class="section-title">Vì sao nên chọn thấu chi Agribank?</h2>
+
+      <div class="reason-grid">
+        <article class="reason-card">
+          <span class="reason-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </span>
+          <h3>Chủ động nguồn vốn</h3>
+          <p>Sử dụng tiền ngay cả khi tài khoản không đủ số dư, không cần chờ đợi thủ tục vay thông thường.</p>
+        </article>
+
+        <article class="reason-card">
+          <span class="reason-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v18M7 6.5h6.5a2.5 2.5 0 0 1 0 5H8a2.5 2.5 0 0 0 0 5h7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </span>
+          <h3>Hạn mức phù hợp</h3>
+          <p>Được cấp dựa trên thu nhập và khả năng trả nợ thực tế của Quý khách.</p>
+        </article>
+
+        <article class="reason-card">
+          <span class="reason-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </span>
+          <h3>Tối ưu chi phí</h3>
+          <p>Chỉ tính lãi trên số tiền và số ngày thực tế sử dụng — dùng bao nhiêu, trả lãi bấy nhiêu.</p>
+        </article>
+
+        <article class="reason-card">
+          <span class="reason-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="4.5" width="17" height="16" rx="2.5" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 9.5h17M8 3v3M16 3v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </span>
+          <h3>Thời hạn linh hoạt</h3>
+          <p>Hạn mức thấu chi được cấp tối đa <%= hanMucThoiHanThang %> tháng.</p>
+        </article>
+
+        <article class="reason-card">
+          <span class="reason-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="6" width="17" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 10.5h17" stroke="currentColor" stroke-width="1.6"/><path d="M8 21h8M12 18v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </span>
+          <h3>Thanh toán tiện lợi</h3>
+          <p>Chuyển khoản, quét mã QR ngay trên tài khoản thanh toán quen thuộc.</p>
+        </article>
+
+        <article class="reason-card reason-card--highlight">
+          <span class="reason-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M9 12.5 11 14.5 15.5 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <h3>Lãi suất ưu đãi</h3>
+          <p>Chỉ từ <strong><%= laiSuatNamPhanTram %>%/năm</strong> — cạnh tranh trên thị trường.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRỤ SỞ -->
+  <section class="branch">
+    <img class="branch__photo" src="/images/tru-so-ha-tinh-ii.jpg" alt="Trụ sở Agribank Chi nhánh Hà Tĩnh II">
+    <div class="branch__overlay">
+      <div class="wrap">
+        <p class="branch__eyebrow">Đồng hành cùng khách hàng Hà Tĩnh</p>
+        <p class="branch__title">Agribank Chi nhánh Hà Tĩnh II</p>
+      </div>
+    </div>
+    <p class="branch__credit">Ảnh: Báo Hà Tĩnh</p>
+  </section>
+
+  <!-- CALCULATOR -->
+  <section class="calc" id="tinh-lai">
+    <div class="wrap calc__inner">
+      <div class="calc__intro">
+        <p class="section-eyebrow section-eyebrow--light">Công cụ ước tính</p>
+        <h2 class="section-title section-title--light">Ước tính tiền lãi thấu chi</h2>
+        <p class="calc__desc">
+          Kéo thanh trượt để xem số tiền lãi ước tính khi sử dụng thấu chi trong
+          một số ngày nhất định. Dùng bao nhiêu, trả lãi bấy nhiêu.
+        </p>
+      </div>
+
+      <form class="calc-card" id="calcForm" novalidate>
+        <div class="calc-field">
+          <div class="calc-field__head">
+            <label for="soTien">Số tiền cần dùng</label>
+            <output class="calc-field__value" for="soTien" id="soTienValue">10.000.000 đ</output>
+          </div>
+          <input type="range" id="soTien" name="soTien" min="500000" max="100000000" step="500000" value="10000000">
+        </div>
+
+        <div class="calc-field">
+          <div class="calc-field__head">
+            <label for="soNgay">Số ngày sử dụng</label>
+            <output class="calc-field__value" for="soNgay" id="soNgayValue">15 ngày</output>
+          </div>
+          <input type="range" id="soNgay" name="soNgay" min="1" max="60" step="1" value="15">
+        </div>
+
+        <div class="calc-result">
+          <div class="calc-result__item">
+            <span>Lãi suất áp dụng</span>
+            <strong><%= laiSuatNamPhanTram %>%/năm</strong>
+          </div>
+          <div class="calc-result__item calc-result__item--main">
+            <span>Tiền lãi ước tính</span>
+            <strong id="tienLaiValue">30.822 đ</strong>
+          </div>
+        </div>
+
+        <p class="calc-note">
+          * Mức lãi suất <%= laiSuatNamPhanTram %>%/năm chỉ mang tính chất minh hoạ,
+          không phải chào giá chính thức. Hạn mức và lãi suất thực tế được xác định
+          theo hồ sơ và chính sách của Agribank tại từng thời điểm.
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ĐĂNG KÝ -->
+  <section class="register" id="dang-ky">
+    <div class="wrap register__inner">
+      <div class="register__intro">
+        <p class="section-eyebrow">Đăng ký ngay hôm nay</p>
+        <h2 class="section-title">Đừng để những khoản chi bất ngờ<br>làm gián đoạn kế hoạch của Quý khách</h2>
+        <p class="register__desc">
+          Để lại thông tin, cán bộ Agribank Chi nhánh Hà Tĩnh II sẽ liên hệ tư vấn
+          hạn mức thấu chi phù hợp với Quý khách trong thời gian sớm nhất.
+        </p>
+
+        <dl class="register__contact">
+          <div>
+            <dt>Điểm giao dịch</dt>
+            <dd>Các Phòng giao dịch của Agribank Chi nhánh Hà Tĩnh II</dd>
+          </div>
+          <div>
+            <dt>Hotline</dt>
+            <dd><a href="tel:0966400364">0966.400.364</a></dd>
+          </div>
+        </dl>
+      </div>
+
+      <form class="register-form" id="dangKyForm" novalidate>
+        <div class="field">
+          <label for="hoTen">Họ và tên <span aria-hidden="true">*</span></label>
+          <input type="text" id="hoTen" name="hoTen" autocomplete="name" required aria-describedby="hoTen-error" aria-invalid="false">
+          <p class="field-error" id="hoTen-error" role="alert" hidden></p>
+        </div>
+
+        <div class="field">
+          <label for="soDienThoai">Số điện thoại <span aria-hidden="true">*</span></label>
+          <input type="tel" id="soDienThoai" name="soDienThoai" autocomplete="tel" inputmode="numeric" placeholder="09xxxxxxxx" required aria-describedby="soDienThoai-error" aria-invalid="false">
+          <p class="field-error" id="soDienThoai-error" role="alert" hidden></p>
+        </div>
+
+        <div class="field">
+          <label for="diaDiem">Phòng giao dịch mong muốn <span class="field-optional">(không bắt buộc)</span></label>
+          <input type="text" id="diaDiem" name="diaDiem" placeholder="VD: PGD gần nơi ở/làm việc của Quý khách">
+        </div>
+
+        <div class="field">
+          <label for="ghiChu">Nội dung cần tư vấn <span class="field-optional">(không bắt buộc)</span></label>
+          <textarea id="ghiChu" name="ghiChu" rows="3" placeholder="Hạn mức mong muốn, thời gian liên hệ thuận tiện..."></textarea>
+        </div>
+
+        <div class="form-status" id="formStatus" role="status" aria-live="polite" hidden></div>
+
+        <button class="btn btn--primary btn--lg btn--block" type="submit">
+          <span id="submitLabel">Gửi đăng ký</span>
+        </button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<%- include('partials/footer') %>
+
+<script src="/js/main.js"></script>
+</body>
+</html>

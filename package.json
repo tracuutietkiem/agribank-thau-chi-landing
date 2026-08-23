@@ -1,0 +1,16 @@
+{
+  "name": "agribank-thau-chi-landing",
+  "version": "1.0.0",
+  "description": "Trang gioi thieu san pham Cho vay thau chi tren tai khoan thanh toan - Agribank Chi nhanh Ha Tinh II",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2"
+  }
+}
